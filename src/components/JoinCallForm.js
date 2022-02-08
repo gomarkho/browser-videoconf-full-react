@@ -53,15 +53,6 @@ export default function JoinCallForm({ onJoin = () => {} }) {
             >
               Join
             </Button>
-            <Button
-              variant="secondary"
-              style={{ float: 'right' }}
-              onClick={() => {
-                history.push('/explore')
-              }}
-            >
-              Explore rooms...
-            </Button>
           </Form>
         </Col>
       </Row>

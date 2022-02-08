@@ -28,10 +28,6 @@ function App() {
     <>
       <Header />
       <Switch>
-        <Route path="/explore">
-          <Explore />
-        </Route>
-
         <Route path="/in-call">
           {roomDetails.name === undefined || roomDetails.room === undefined ? (
             <Redirect to="/" />
