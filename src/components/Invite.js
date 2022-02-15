@@ -23,7 +23,7 @@ export default function InviteButton({
   return (
     <>
       <Dropdown drop="up">
-        <Dropdown.Toggle variant="success" id="dropdown-basic">
+        <Dropdown.Toggle style={{ 'background' :  '#528BF2' }} id="dropdown-basic">
           Invite
         </Dropdown.Toggle>
 

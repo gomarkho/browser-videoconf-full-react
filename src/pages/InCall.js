@@ -225,7 +225,7 @@ export default function InCall({ roomDetails }) {
                     // await roomSession.leave();
                     history.push("/");
                   }}
-                  variant="danger"
+                  style={{ 'background' : '#EB6862' }}
                 >
                   Leave
                 </Button>
