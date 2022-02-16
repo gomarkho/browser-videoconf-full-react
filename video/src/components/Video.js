@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import * as SignalWire from "@signalwire/js";
 import useScreenSize from "use-screen-size";
+import SERVERLOCATION from '../serverLocation';
 
 export default function Video({
   onRoomInit = () => {},
@@ -26,7 +27,7 @@ export default function Video({
       setSetupDone(true);
       let token, room;
       try {
-        token = await axios.post("/get_token", {
+        token = await axios.post(SERVERLOCATION + "/get_token", {
           user_name: roomDetails.name,
           room_name: roomDetails.room,
           mod: roomDetails.mod,
