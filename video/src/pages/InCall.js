@@ -236,8 +236,8 @@ export default function InCall({ roomDetails }) {
               <ScreenShareButton room={room} />
             </Col>
             <Col xs="auto" style={{ marginTop: 5 }}>
-              <Button
-                onClick={async () => {
+              <Button style={{ background : '#EB6862' }}
+                                         onClick={async () => {
                   await room.leave();
                   history.push("/");
                 }}

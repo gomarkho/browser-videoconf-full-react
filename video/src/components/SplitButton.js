@@ -12,9 +12,8 @@ export default function SplitButtonMenu({
 }) {
   return (
     <Dropdown drop="up" as={ButtonGroup}>
-      <Button
-        variant={muted ? "danger" : "success"}
-        onClick={async () => {
+        <Button style={{ 'background' :  muted ? '#EB6862' : '#528BF2'}}
+                onClick={async () => {
           if (muted) {
             setMuted(false);
           } else {
@@ -27,7 +26,7 @@ export default function SplitButtonMenu({
 
       <Dropdown.Toggle
         split
-        variant={muted ? "danger" : "success"}
+        style={{ 'background' :  muted ? '#EB6862' : '#528BF2'}}
         id="dropdown-split-basic"
       />
 

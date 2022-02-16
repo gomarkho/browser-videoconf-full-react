@@ -59,8 +59,8 @@ export default function Participants({
                     }
                   >
                     <Button
-                      style={{ padding: "2px 5px", marginLeft: 1 }}
-                      variant={!member.audio_muted ? "success" : "danger"}
+                        style={{ padding: "2px 5px", marginLeft: 1, background: member.audio_muted ? '#EB6862' : '#528BF2' }}
+                        variant={!member.audio_muted ? "success" : "danger"}
                       onClick={() => {
                         member.audio_muted
                           ? onMemberUpdate({
@@ -87,8 +87,7 @@ export default function Participants({
                     }
                   >
                     <Button
-                      style={{ padding: "2px 5px", marginLeft: 1 }}
-                      variant={!member.video_muted ? "success" : "danger"}
+                      style={{ padding: "2px 5px", marginLeft: 1, background: member.video_muted ? '#EB6862' : '#528BF2' }}
                       onClick={() => {
                         member.video_muted
                           ? onMemberUpdate({
@@ -111,8 +110,8 @@ export default function Participants({
                     overlay={<Tooltip variant="info">Remove Member</Tooltip>}
                   >
                     <Button
-                      style={{ padding: "2px 5px", marginLeft: 1 }}
-                      variant="danger"
+                        style={{ padding: "2px 5px", marginLeft: 1, background : '#EB6862'}}
+                        variant="danger"
                       onClick={() => {
                         onMemberUpdate({ action: "remove", id: member.id });
                       }}
