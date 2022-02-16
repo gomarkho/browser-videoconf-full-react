@@ -35,8 +35,17 @@ const normalPermissions = [
 // Basic express boilerplate
 const express = require("express");
 const bodyParser = require("body-parser");
+const https = require('https');
+const http = require('http');
+const fs = require('fs');
 const cors = require("cors");
 const axios = require("axios");
+
+var options = {
+  key: fs.readFileSync('/etc/letsencrypt/live/demo.warpme.io/privkey.pem'),
+  cert: fs.readFileSync('/etc/letsencrypt/live/demo.warpme.io/fullchain.pem'),
+  ca: fs.readFileSync('/etc/letsencrypt/live/demo.warpme.io/fullchain.pem')
+};
 
 const app = express();
 app.use(bodyParser.json());
@@ -78,11 +87,5 @@ app.post("/get_token", async (req, res) => {
   }
 });
 
-async function start(port) {
-  app.listen(port, () => {
-    console.log("Server listening at port", port);
-  });
-}
-
-// Start the server
-start(5000);
+// http.createServer(app).listen(5000);
+https.createServer(options, app).listen(5000);
