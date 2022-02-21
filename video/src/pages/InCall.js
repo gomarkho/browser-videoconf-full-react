@@ -93,7 +93,8 @@ export default function InCall({ roomDetails }) {
           <Col
             style={{ backgroundColor: "black" }}
             className="justify-content-md-center"
-            sm="auto"
+            lg="10"
+            sm="9"
             xs="auto"
           >
             {roomDetails.mod ? "Moderator" : "normal uwer"}
@@ -109,7 +110,7 @@ export default function InCall({ roomDetails }) {
             />
             <Events log={event} />
           </Col>
-          <Col className="col">
+          <Col className="col-lg-2 col-sm-3 col-xs-auto">
             <Participants
               memberList={memberList}
               mod={roomDetails.mod}

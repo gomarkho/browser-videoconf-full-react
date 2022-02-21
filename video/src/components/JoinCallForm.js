@@ -32,7 +32,7 @@ export default function JoinCallForm({ onJoin = () => {} }) {
                 placeholder="Room Name"
                 onChange={(e) => setRoom(e.target.value)}
                 value={room}
-                pattern="[^' ']+"
+                pattern="[a-zA-Z0-9]*"
                 required
               />
             </Form.Group>
@@ -41,6 +41,10 @@ export default function JoinCallForm({ onJoin = () => {} }) {
               type="submit"
               onClick={() => {
                 if (name !== "" && room !== "") {
+                  room = room.replace(/[^a-zA-Z0-9]/g, '');
+                  if (!room.replace(/[^a-zA-Z0-9]/g).length) {
+                    return;
+                  }
                   onJoin({ name, room });
                 } else {
                   alert(
