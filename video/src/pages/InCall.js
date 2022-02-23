@@ -73,8 +73,10 @@ export default function InCall({ roomDetails }) {
       if (updatedValues.left === true) history.push("/");
       if (updatedValues.thisMemberId !== undefined)
         setThisMemberId(updatedValues.thisMemberId);
-      if (updatedValues.layout !== undefined)
-        setCurLayout(updatedValues.layout);
+        if (updatedValues.layout !== undefined) {
+         
+          setCurLayout(updatedValues.layout);
+        }
       if (updatedValues.member !== undefined) {
         let mem = updatedValues.member;
         console.log("Current User", mem);
@@ -82,6 +84,7 @@ export default function InCall({ roomDetails }) {
         setVideoMuted(mem.video_muted);
         setSpeakerMuted(mem.deaf);
       }
+      
     },
     [history]
   );
