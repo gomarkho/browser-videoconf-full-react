@@ -3,10 +3,6 @@ import Button from "react-bootstrap/Button";
 
 export default function ScreenShareButton({ room }) {
   let [screenShareObj, setScreenShareObj] = useState();
- 
-
-
-
   return (
       <Button style={{ background :  screenShareObj === undefined || room?._screenShareList.size===0 ? '#528BF2' : '#EB6862' }}
               onClick={async () => {
