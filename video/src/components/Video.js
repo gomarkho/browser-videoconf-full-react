@@ -109,8 +109,14 @@ export default function Video({
           });
 
           await room.join();
-
-          let layouts = (await room.getLayouts()).layouts;
+          let layouts=''
+if(roomDetails.mod){
+  layouts = (await room.getLayouts()).layouts;
+}
+else{
+  layouts=''
+}
+           
           let cameras =
             await SignalWire.WebRTC.getCameraDevicesWithPermissions();
           let microphones =
